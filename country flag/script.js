@@ -5,8 +5,24 @@ const getDataCountry = async () => {
       );
       let data = await response.json();
       console.log("countrydata", data);
-      return data;
-    } catch {
+      // appendchild to add new table row
+
+      let tbl = document.getElementById('result-set');
+
+      for (let i = 0; i<data.length; i++){
+       let tblBody = document.createElement('tbody');
+       let row = document.createElement('tr');
+       row.appendChild(document.createTextNode(`${data[i].name}`));
+       row.appendChild(document.createTextNode(`${data[i].capital}`));
+       row.appendChild(document.createTextNode(`${data[i].region}`));
+       row.appendChild(document.createTextNode(`${data[i].flag}`));
+       tblBody.appendChild(row);
+       tbl.appendChild(tblBody);
+      }
+
+
+    }
+     catch {
       console.log("error bos");
     }
   };
@@ -14,13 +30,4 @@ const getDataCountry = async () => {
   countryData = getDataCountry(1);
   console.log(countryData)
 
-  for(let i =0;i<countryData[10];i++){
-      document.getElementById('result-set').innerHTML=
-      `<tr>
-      <td>${countryData[i].name}</td>
-      <td>${countryData[i].capital}</td>
-      <td>${countryData[i].Region}</td>
-      <td>${countryData[i].flag}</td>
-      </tr>
-      `;
-  }
+
