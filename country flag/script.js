@@ -1,11 +1,17 @@
+
+
+
+
 const getDataCountry = async () => {
     try {
       let response = await fetch(
         `https://restcountries.eu/rest/v2/all`
       );
-      let data = await response.json();
+      data = await response.json();
       console.log("countrydata", data);
       // appendchild to add new table row
+
+      callCountryData(data)
 
       let tbl = document.getElementById('result-set');
 
@@ -27,7 +33,14 @@ const getDataCountry = async () => {
     }
   };
 
+  
+  
   countryData = getDataCountry(1);
   console.log(countryData)
+  
+  
+  function callCountryData(data){
+    console.log("countrydata", data)
+  }
 
 
