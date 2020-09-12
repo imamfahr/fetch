@@ -7,7 +7,7 @@ const getDataCountry = async () => {
       let response = await fetch(
         `https://restcountries.eu/rest/v2/all`
       );
-      data = await response.json();
+      let data = await response.json();
       console.log("countrydata", data);
       // appendchild to add new table row
 
