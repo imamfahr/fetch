@@ -1,0 +1,41 @@
+#title-container{
+    display: flex;
+    
+}
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    margin: 0 auto;
+    font-size: 50px;
+}
+
+body{
+    background-color: #006a71;
+}
+
+#result-set{
+    /* border: 1px black solid; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+
+#result-set th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #ff7e67;
+    color: white;
+}
+
+#result-set tr {
+    border: 1px black solid;
+    background-color: whitesmoke;
+    
+}
+
+#result-set tr:nth-child(even){background-color: #68b0ab;}
+
+#result-set tr:hover {background-color: #ecf4f3;}

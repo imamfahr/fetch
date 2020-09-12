@@ -18,10 +18,24 @@ const getDataCountry = async () => {
       for (let i = 0; i<data.length; i++){
        let tblBody = document.createElement('tbody');
        let row = document.createElement('tr');
-       row.appendChild(document.createTextNode(`${data[i].name}`));
-       row.appendChild(document.createTextNode(`${data[i].capital}`));
-       row.appendChild(document.createTextNode(`${data[i].region}`));
-       row.appendChild(document.createTextNode(`${data[i].flag}`));
+       row.innerHTML=`
+      <td>
+      ${data[i].name}      
+      </td>
+      <td>
+      ${data[i].capital}         
+      </td>
+      <td>
+      ${data[i].region}         
+      </td>
+      <td>
+      <img src="${data[i].flag}" style="width:200px; height:100px" alt="">
+      </td>
+      `
+      //  row.appendChild(document.createTextNode(`${data[i].name}`));
+      //  row.appendChild(document.createTextNode(`${data[i].capital}`));
+      //  row.appendChild(document.createTextNode(`${data[i].region}`));
+      //  row.appendChild(document.createTextNode(`${data[i].flag}`));
        tblBody.appendChild(row);
        tbl.appendChild(tblBody);
       }
